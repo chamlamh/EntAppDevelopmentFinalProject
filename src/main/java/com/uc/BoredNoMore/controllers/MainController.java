@@ -3,7 +3,9 @@ package com.uc.BoredNoMore.controllers;
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.uc.BoredNoMore.dto.*;
 
 @Controller
 public class MainController {
@@ -38,7 +40,8 @@ public class MainController {
 	 * @return The template for adding custom activities
 	 */
 	@GetMapping("/addactivity")
-	public String getAddActivity() {
+	public String getAddActivity(Model model) {
+		model.addAttribute("activity", new ActivityDTO());
 		return "addactivity";
 	}
 	
