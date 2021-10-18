@@ -1,27 +1,30 @@
 package com.uc.BoredNoMore.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class ActivityDTO {
 
-	private String title;
+	private String activity;
 	private String type;
 	private int participants;
 	private double price;
 	private double accessibility;
 	
-	public ActivityDTO(String title, String type, int participants, double price, double accessibility) {
-		this.title = title;
+	public ActivityDTO(String activity, String type, int participants, double price, double accessibility) {
+		this.activity = activity;
 		this.type = type;
 		this.participants = participants;
 		this.price = price;
 		this.accessibility = accessibility;
 	}
+	public ActivityDTO() {}
 
-	public String getTitle() {
-		return title;
+	public String getActivity() {
+		return activity;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setActivity(String activity) {
+		this.activity = activity;
 	}
 
 	public String getType() {
@@ -58,7 +61,7 @@ public class ActivityDTO {
 
 	@Override
 	public String toString() {
-		return "activitys [title=" + title + ", type=" + type + ", participants=" + participants + ", price=" + price
+		return "activitys [activity=" + activity + ", type=" + type + ", participants=" + participants + ", price=" + price
 				+ ", accessibility=" + accessibility + "]";
 	}
 	
