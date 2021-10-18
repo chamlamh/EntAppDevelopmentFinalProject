@@ -13,7 +13,7 @@ public interface IActivityDAO {
 	/**
 	 * Add activity to database
 	 * @return void
-	 */s
+	 */
 	void addActivity(ActivityDTO activity);
 	
 	/**
