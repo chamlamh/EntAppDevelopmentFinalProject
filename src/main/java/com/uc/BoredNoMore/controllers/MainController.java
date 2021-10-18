@@ -57,7 +57,7 @@ public class MainController {
 	 * @return void
 	 */
 	@PostMapping("/addactivity")
-	public String postAddActivity(@RequestParam("activity") ActivityDTO activity, RedirectAttributes redirectAttributes) {
+	public String postAddActivity(@ModelAttribute ActivityDTO activity, RedirectAttributes redirectAttributes) {
 		//TODO: Instantiate IActivityDAO and call ActivityDAO.addActivity(activity); to save to database
 		redirectAttributes.addFlashAttribute("message", "You successfully uploaded the activity" + activity.getActivity() + "!");
 		return "redirect:/activity";
