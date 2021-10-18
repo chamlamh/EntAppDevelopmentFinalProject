@@ -7,7 +7,30 @@
     	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 	</head>
 	<body>
-		<div th:replace="fragments/header :: header"></div>
-		<h1>Add Activity</h1>
+		<div th:replace="fragments/header :: header"></div>		
+		<div class="container">
+			<div class="row">
+				<h1>Add Activity</h1>
+			</div>
+			<div class="row">
+				<input type="text" id="activityName" name="activityName" placeholder="Activity Name...">				
+			</div>
+			<div class="row">
+				<input type="text" id="activityType" name="activityType" placeholder="Activity Type...">			
+			</div>
+			<div class="row">
+				<input type="number" id="numParticipants" name="numParticipants" placeholder="Number of Participants...">
+			</div>
+			<div class="row">
+				<input type="number" id="price" name="price" placeholder="Price...">
+			</div>
+			<div class="row">
+				<input type="text" id="activityAccessibility" name="activityAccessibility" placeholder="Activity Accessibility...">
+			</div>
+			<div class="row">
+				<button type="button" class="btn btn-secondary">Add Activity</button>
+			</div>
+		</div>
+		
 	</body>
 </html>
