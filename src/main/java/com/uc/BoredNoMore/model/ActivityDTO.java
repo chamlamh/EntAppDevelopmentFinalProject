@@ -1,6 +1,6 @@
 package com.uc.BoredNoMore.model;
 
-public class activitys {
+public class ActivityDTO {
 
 	private String title;
 	private String type;
@@ -8,7 +8,7 @@ public class activitys {
 	private double price;
 	private double accessibility;
 	
-	public activitys(String title, String type, int participants, double price, double accessibility) {
+	public ActivityDTO(String title, String type, int participants, double price, double accessibility) {
 		this.title = title;
 		this.type = type;
 		this.participants = participants;
