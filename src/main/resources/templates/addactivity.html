@@ -7,7 +7,32 @@
     	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 	</head>
 	<body>
-		<div th:replace="fragments/header :: header"></div>
-		<h1>Add Activity</h1>
+		<div th:replace="fragments/header :: header"></div>		
+		<div class="container">
+			<div class="row">
+				<h1>Add Activity</h1>
+			</div>
+			<form th:action="@{/addactivity}" th:object="${activity}" method="post">			
+				<div class="row">
+					<p>Activity Name: <input type="text" th:field="*{activity}" placeholder="Activity Name..."></p>			
+				</div>
+				<div class="row">
+					<p>Activity Type: <input type="text" th:field="*{type}" placeholder="Activity Type..."></p>			
+				</div>
+				<div class="row">
+					<p>Activity Participants: <input type="text" th:field="*{participants}" placeholder="Activity Participants..."></p>
+				</div>
+				<div class="row">
+					<p>Activity Price: <input type="text" th:field="*{price}" placeholder="Activity Price..."></p>
+				</div>
+				<div class="row">
+					<p>Activity Accessibility: <input type="text" th:field="*{accessibility}" placeholder="Activity Accessibility..."></p>
+				</div>
+				<div class="row">
+					<p><input  class="btn btn-secondary" type="submit" value="Submit" /> <input class="btn btn-secondary" type="reset" value="Reset" /></p>
+				</div>
+			</form>
+		</div>
+		
 	</body>
 </html>
