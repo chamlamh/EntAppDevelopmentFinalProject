@@ -12,7 +12,10 @@
 			<div class="row">
 				<h1>Add Activity</h1>
 			</div>
-			<form th:action="@{/addactivity}" th:object="${activity}" method="post">			
+			<form th:action="@{/addactivity}" th:object="${activity}" method="post" >	
+			<script>
+			
+			</script>		
 				<div class="row">
 					<p>Activity Name: <input type="text" th:field="*{activity}" placeholder="Activity Name..."></p>			
 				</div>
@@ -20,13 +23,23 @@
 					<p>Activity Type: <input type="text" th:field="*{type}" placeholder="Activity Type..."></p>			
 				</div>
 				<div class="row">
-					<p>Activity Participants: <input type="text" th:field="*{participants}" placeholder="Activity Participants..."></p>
+					<p>Activity Participants: <input type="text" id = "participants" th:field="*{participants}" placeholder="Number of Participants..." ></p>
+					
+					<script type="text/javascript">document.getElementById("participants").value = "";</script>
+					
 				</div>
 				<div class="row">
-					<p>Activity Price: <input type="text" th:field="*{price}" placeholder="Activity Price..."></p>
+					<p>Activity Price: $<input type="text" id = "price" th:field="*{price}" placeholder= "Activity Price..."></p>
+					
+					<script type="text/javascript">document.getElementById("price").value = "";</script>
+					
 				</div>
 				<div class="row">
-					<p>Activity Accessibility: <input type="text" th:field="*{accessibility}" placeholder="Activity Accessibility..."></p>
+					<p>Activity Accessibility: <input type="text" id = "accessibility" th:field="*{accessibility}" placeholder= "Activity Accessibility..."></p>
+					
+					<script type="text/javascript">document.getElementById("accessibility").value = "";</script>
+					
+					<!-- A description of accessibility units may be needed here for UX purposes.  -->
 				</div>
 				<div class="row">
 					<p><input  class="btn btn-secondary" type="submit" value="Submit" /> <input class="btn btn-secondary" type="reset" value="Reset" /></p>
