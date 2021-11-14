@@ -13,20 +13,36 @@
 				<h1>Add Activity</h1>
 			</div>
 			<form th:action="@{/addactivity}" th:object="${activity}" method="post">			
-				<div class="row">
-					<p>Activity Name: <input type="text" th:field="*{activity}" placeholder="Activity Name..."></p>			
+				<div class=" form-group row">
+					<label class="col-sm-4 col-form-label" for="name">Activity Name:</label>
+					<div class=col-sm-4>
+						<input type="text" id="name" class="form-control" th:field="*{activity}" placeholder="Activity Name..."/>	
+					</div>
 				</div>
-				<div class="row">
-					<p>Activity Type: <input type="text" th:field="*{type}" placeholder="Activity Type..."></p>			
+				<div class="form-group row">
+<!-- 					<p>Activity Type: <input type="text" th:field="*{type}" placeholder="Activity Type..."></p>			 -->
+					<label class="col-sm-4 col-form-label" for="type">Activity Type:</label>
+					<div class="col-sm-4">
+						<input type="text" id="type" class="form-control" th:field="*{type}" placeholder="Activity Type..."/>
+					</div>
 				</div>
-				<div class="row">
-					<p><span title="How many people will be participating?">Activity Participants: </span><input type="text" th:field="*{participants}" placeholder="Activity Participants..."></p>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="participants"><span title="How many people will be participating?">Activity Participants: </span></label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="participants" th:field="*{participants}" placeholder="Activity Participants...">
+					</div>
 				</div>
-				<div class="row">
-					<p>Activity Price: $<input type="text" th:field="*{price}" placeholder="Activity Price..."></p>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="price">Activity Price: $</label>
+					<div class="col-sm-4">
+						<input type="text" id="price" class="form-control" th:field="*{price}" placeholder="Activity Price...">
+					</div>
 				</div>
-				<div class="row">
-					<p><span title="How easy an activity is to complete">Activity Accessibility:</span> <input type="text" th:field="*{accessibility}" placeholder="Activity Accessibility..."></p>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="accessibility"><span title="How easy an activity is to complete">Activity Accessibility:</span> </label>
+					<div class="col-sm-4">
+						<input type="text" id="accessibility" class="form-control" th:field="*{accessibility}" placeholder="Activity Accessibility...">
+					</div>
 				</div>
 				<div class="row">
 					<p><input  class="btn btn-secondary" type="submit" value="Submit" /> <input class="btn btn-secondary" type="reset" value="Reset" /></p>
