@@ -20,13 +20,13 @@
 					<p>Activity Type: <input type="text" th:field="*{type}" placeholder="Activity Type..."></p>			
 				</div>
 				<div class="row">
-					<p>Activity Participants: <input type="text" th:field="*{participants}" placeholder="Activity Participants..."></p>
+					<p><span title="How many people will be participating?">Activity Participants: </span><input type="text" th:field="*{participants}" placeholder="Activity Participants..."></p>
 				</div>
 				<div class="row">
-					<p>Activity Price: <input type="text" th:field="*{price}" placeholder="Activity Price..."></p>
+					<p>Activity Price: $<input type="text" th:field="*{price}" placeholder="Activity Price..."></p>
 				</div>
 				<div class="row">
-					<p>Activity Accessibility: <input type="text" th:field="*{accessibility}" placeholder="Activity Accessibility..."></p>
+					<p><span title="How easy an activity is to complete">Activity Accessibility:</span> <input type="text" th:field="*{accessibility}" placeholder="Activity Accessibility..."></p>
 				</div>
 				<div class="row">
 					<p><input  class="btn btn-secondary" type="submit" value="Submit" /> <input class="btn btn-secondary" type="reset" value="Reset" /></p>
