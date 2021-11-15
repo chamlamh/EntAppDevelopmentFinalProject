@@ -14,16 +14,22 @@
 		
 		<div class = "container">
 		
-		<p class = "h4 mb-4"> Login </p>
+		<p class = "h4 mb-4"> Create a Account </p>
 		<form>
 		
+			<input type="text" th:field="*{firstName}"
+			class = "form-control mb-4" placeholder="First Name">
+			
+			<input type="text" th:field="*{lastName}"
+			class = "form-control mb-4" placeholder="Last Name">
+		
 			<input type="text" th:field="*{userName}"
-			class = "form-control mb-4" placeholder="username">
+			class = "form-control mb-4" placeholder="Username">
 			
 			<input type="text" th:field="*{password}"
-			class = "form-control mb-4" placeholder="password">
+			class = "form-control mb-4" placeholder="Password">
 			
-			<button type="submit" class="btn btn-danger col-2">Login</button>
+			<button type="submit" class="btn btn-danger col-2">Create</button>
 
 		</form>
 		</div>

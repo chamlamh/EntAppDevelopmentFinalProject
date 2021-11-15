@@ -52,6 +52,24 @@ public class MainController {
 	
 	/**
 	 * 
+	 * @return The template for finding activities
+	 */
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	/**
+	 * 
+	 * @return The template for finding activities
+	 */
+	@GetMapping("/createaccount")
+	public String createaccount() {
+		return "createaccount";
+	}
+	
+	/**
+	 * 
 	 * @return The template for adding custom activities
 	 */
 	@GetMapping("/addactivity")
