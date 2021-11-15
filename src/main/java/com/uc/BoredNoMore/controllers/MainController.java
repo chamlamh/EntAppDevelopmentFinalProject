@@ -1,5 +1,7 @@
 package com.uc.BoredNoMore.controllers;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Controller;
@@ -11,12 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.uc.BoredNoMore.dao.IActivityDAO;
 import com.uc.BoredNoMore.dto.*;
 
 @Controller
 @RequestMapping()
 public class MainController {
 	
+	private IActivityDAO activityService;
+	public MainController(IActivityDAO activityService) {
+		this.activityService = activityService;
+	}
+
 	@PostConstruct
 	private void loadData() {
 		//this is where we would potentially get auth information in the future.
@@ -68,7 +76,10 @@ public class MainController {
 	 * @return The template for viewing and managing the Todo list
 	 */
 	@GetMapping("/todo")
-	public String getTodo() {
+	public String getTodo(Model todoListModel) {
+		
+		List<ActivityDTO> todo = activityService.getActivities();
+		todoListModel.addAttribute("todoList", todo);
 		return "todo";
 	}
 	
