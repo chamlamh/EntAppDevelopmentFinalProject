@@ -16,7 +16,7 @@ public interface IActivityDAO {
 	 * Add activity to database
 	 * @return void
 	 */
-	void addActivity(ActivityDTO activity);
+	void saveActivity(ActivityDTO activity);
 	
 	/**
 	 * Delete activity from database

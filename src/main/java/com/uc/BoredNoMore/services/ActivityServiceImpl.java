@@ -20,9 +20,10 @@ public class ActivityServiceImpl implements IActivityDAO{
 	}
 
 	@Override
-	public void addActivity(ActivityDTO activity) {
-		// TODO Auto-generated method stub
-		
+	public void saveActivity(ActivityDTO activity) {
+		String s = activity.getName();
+		s.length();
+		this.activityRepo.save(activity);
 	}
 
 	@Override

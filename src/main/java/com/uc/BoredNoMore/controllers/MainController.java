@@ -74,7 +74,8 @@ public class MainController {
 	 */
 	@GetMapping("/addactivity")
 	public String getAddActivity(Model model) {
-		model.addAttribute("activity", new ActivityDTO());
+		ActivityDTO activity = new ActivityDTO();
+		model.addAttribute("activity", activity);
 		return "addactivity";
 	}
 	
@@ -83,9 +84,10 @@ public class MainController {
 	 * @return void
 	 */
 	@PostMapping("/addactivity")
-	public String postAddActivity(@ModelAttribute ActivityDTO activity, RedirectAttributes redirectAttributes) {
+	public String postAddActivity(@ModelAttribute("activity") ActivityDTO activity, RedirectAttributes redirectAttributes) {
 		//TODO: Instantiate IActivityDAO and call ActivityDAO.addActivity(activity); to save to database
-		redirectAttributes.addFlashAttribute("message", "You successfully uploaded the activity" + activity.getActivity() + "!");
+		this.activityService.saveActivity(activity);
+		redirectAttributes.addFlashAttribute("message", "You successfully uploaded the activity" + activity.getName() + "!");
 		return "redirect:/activity";
 	}
 	

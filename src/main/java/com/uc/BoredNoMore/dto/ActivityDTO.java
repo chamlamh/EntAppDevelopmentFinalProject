@@ -16,8 +16,10 @@ public class ActivityDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
+	@Column(name="activity_id")
+	private int activityID;
 	@Column(name="name")
-	private String activity;
+	private String name;
 	@Column(name="type")
 	private String type;
 	@Column(name="participants")
@@ -29,8 +31,9 @@ public class ActivityDTO {
 	@Column(name="isFinished")
 	private boolean isFinished;
 	
-	public ActivityDTO(String activity, String type, int participants, double price, double accessibility) {
-		this.activity = activity;
+	public ActivityDTO(int activityID, String name, String type, int participants, double price, double accessibility) {
+		this.activityID = activityID;
+		this.name = name;
 		this.type = type;
 		this.participants = participants;
 		this.price = price;
@@ -38,13 +41,20 @@ public class ActivityDTO {
 		this.isFinished = false;
 	}
 	public ActivityDTO() {}
-
-	public String getActivity() {
-		return activity;
+	
+	public int getActivityID() {
+		return activityID;
+	}
+	public void setActivityID(int activityID) {
+		this.activityID = activityID;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
-	public void setActivity(String activity) {
-		this.activity = activity;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getType() {
@@ -89,7 +99,7 @@ public class ActivityDTO {
 
 	@Override
 	public String toString() {
-		return "activitys [activity=" + activity + ", type=" + type + ", participants=" + participants + ", price=" + price
+		return "activitys [activity=" + name + ", type=" + type + ", participants=" + participants + ", price=" + price
 				+ ", accessibility=" + accessibility + "]";
 	}
 	
