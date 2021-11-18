@@ -18,8 +18,8 @@ public class ActivityDTO {
 	
 	@Column(name="activity_id")
 	private int activityID;
-	@Column(name="name")
-	private String name;
+	@Column(name="activity")
+	private String activity; //THIS IS THE ACTIVITY NAME
 	@Column(name="type")
 	private String type;
 	@Column(name="participants")
@@ -31,9 +31,9 @@ public class ActivityDTO {
 	@Column(name="isFinished")
 	private boolean isFinished;
 	
-	public ActivityDTO(int activityID, String name, String type, int participants, double price, double accessibility) {
+	public ActivityDTO(int activityID, String activity, String type, int participants, double price, double accessibility) {
 		this.activityID = activityID;
-		this.name = name;
+		this.activity = activity;
 		this.type = type;
 		this.participants = participants;
 		this.price = price;
@@ -49,12 +49,12 @@ public class ActivityDTO {
 		this.activityID = activityID;
 	}
 	
-	public String getName() {
-		return name;
+	public String getActivity() {
+		return activity;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setActivity(String name) {
+		this.activity = name;
 	}
 
 	public String getType() {
@@ -99,7 +99,7 @@ public class ActivityDTO {
 
 	@Override
 	public String toString() {
-		return "activitys [activity=" + name + ", type=" + type + ", participants=" + participants + ", price=" + price
+		return "activitys [activity=" + activity + ", type=" + type + ", participants=" + participants + ", price=" + price
 				+ ", accessibility=" + accessibility + "]";
 	}
 	

@@ -21,8 +21,6 @@ public class ActivityServiceImpl implements IActivityDAO{
 
 	@Override
 	public void saveActivity(ActivityDTO activity) {
-		String s = activity.getName();
-		s.length();
 		this.activityRepo.save(activity);
 	}
 
