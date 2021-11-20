@@ -22,13 +22,19 @@ public class ActivityServiceImpl implements IActivityDAO{
 	@Override
 	public void addActivity(ActivityDTO activity) {
 		// TODO Auto-generated method stub
+		this.activityRepo.add(activity);
 		
+	}
+	
+	@Override
+	public void saveActivity(ActivityDTO activity) {
+		this.activityRepo.save(activity);
 	}
 
 	@Override
 	public void deleteActivity(ActivityDTO activity) {
 		// TODO Auto-generated method stub
-		
+		this.activityRepo.delete(activity);
 	}
 
 	@Override
