@@ -29,6 +29,10 @@
 			<td th:text=${todo.accessibility}></td>
 			<td th:text=${todo.isFinished}></td>
 		</tr>
+		
+			<td><a th:href="@{/todo/viewUpdateForm(activityId=${todo.activity_id})}"
+			class="btn btn-light btn-sm">Update</a>
+			</td>
 		</tbody>
 	</table>
 	</body>

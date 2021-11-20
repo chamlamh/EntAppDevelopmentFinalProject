@@ -17,7 +17,7 @@ import com.uc.BoredNoMore.dao.IActivityDAO;
 import com.uc.BoredNoMore.dto.*;
 
 @Controller
-@RequestMapping()
+@RequestMapping("/BoredActivity")
 public class MainController {
 	
 	private IActivityDAO activityService;
@@ -101,6 +101,13 @@ public class MainController {
 		List<ActivityDTO> todo = activityService.getActivities();
 		todoListModel.addAttribute("todoList", todo);
 		return "todo";
+	}
+	
+	@GetMapping("/viewUpdateForm")
+	public String viewUpdateForm(@RequestParam("activityId") int theID, Model theModel) 
+	{
+		ActivityDTO theActivity = ActivityServiceImpl.this(theID);
+		
 	}
 	
 }

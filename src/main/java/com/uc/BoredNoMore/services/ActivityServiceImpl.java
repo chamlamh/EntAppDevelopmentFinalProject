@@ -1,6 +1,7 @@
 package com.uc.BoredNoMore.services;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,10 @@ public class ActivityServiceImpl implements IActivityDAO{
 	public ArrayList<ActivityDTO> getActivities() {
 		return (ArrayList<ActivityDTO>) activityRepo.findAll();
 	}
-
+	
+	@Override
+	public List<ActivityDTO> findAll() {
+		// TODO Auto-generated method stub
+		return activityRepo.findAllByOrderByLastNameAsc();
+	}
 }
