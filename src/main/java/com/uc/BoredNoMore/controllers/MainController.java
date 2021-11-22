@@ -106,6 +106,8 @@ public class MainController {
 	@GetMapping("/viewUpdateForm")
 	public String viewUpdateForm(@RequestParam("activityId") int theID, Model theModel) 
 	{
+		//This method is preventing me from running the application
+		 //When I try to block comment this code out the app still does not compile
 		ActivityDTO theActivity = ActivityServiceImpl.this(theID);
 		
 	}
