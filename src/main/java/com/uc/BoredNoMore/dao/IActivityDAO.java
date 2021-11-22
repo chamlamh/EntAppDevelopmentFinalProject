@@ -28,6 +28,9 @@ public interface IActivityDAO {
 	 * Get activity from database with list
 	 * @return ActivityDTO list
 	 */
+	
+	List<ActivityDTO> findAll();
+	
 	ArrayList<ActivityDTO> getActivities();
 	
 	
