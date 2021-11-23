@@ -1,6 +1,7 @@
 package com.uc.BoredNoMore.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.uc.BoredNoMore.dto.ActivityDTO;
 import com.uc.BoredNoMore.dto.TodoDTO;
@@ -29,6 +30,8 @@ public interface IActivityDAO {
 	 * @return ActivityDTO list
 	 */
 	ArrayList<ActivityDTO> getActivities();
+
+	List<ActivityDTO> findAll();
 	
 	
 }
