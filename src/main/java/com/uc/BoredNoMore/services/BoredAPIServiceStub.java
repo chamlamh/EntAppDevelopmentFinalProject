@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.soit.soitfaculty.entity.Faculty;
 import com.uc.BoredNoMore.dao.IBoredAPIService;
 import com.uc.BoredNoMore.dto.ActivityDTO;
 /**
