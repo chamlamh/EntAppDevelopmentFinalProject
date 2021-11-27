@@ -21,8 +21,8 @@ import com.uc.BoredNoMore.dto.*;
 public class MainController {
 	
 	private IActivityDAO activityService;
-	public MainController(IActivityDAO activityService) {
-		this.activityService = activityService;
+	public MainController(IActivityDAO theActivityService) {
+		activityService = theActivityService;
 	}
 
 	@PostConstruct
@@ -100,13 +100,22 @@ public class MainController {
 		
 		List<ActivityDTO> todo = activityService.getActivities();
 		todoListModel.addAttribute("todoList", todo);
-		return "todo";
+		
+		//updated return from "todo" to "todoList/todo"
+		return "todoList/todo";
 	}
 	
 	@GetMapping("/viewUpdateForm")
-	public String viewUpdateForm(@RequestParam("activityId") int theID, Model theModel) 
+	public String viewUpdateForm(@RequestParam("activityId") int theId, Model theModel) 
 	{
-		ActivityDTO theActivity = ActivityServiceImpl.this(theID);
+		ActivityDTO theActivity = activityService.findById(theId);
+		
+		//Pre-populate the form by setting the faculty as a model attribute
+			
+		theModel.addAttribute("activity", theActivity);
+
+		//Redirect us to the faculty form
+		return "activities/activity-form";
 		
 	}
 	
