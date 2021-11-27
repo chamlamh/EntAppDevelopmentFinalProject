@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.uc.BoredNoMore.dao.IActivityDAO;
-import com.uc.BoredNoMore.dto.*;
+import com.uc.BoredNoMore.dto.ActivityDTO;
 
 @Controller
 @RequestMapping("/BoredActivity")
@@ -106,16 +106,16 @@ public class MainController {
 	}
 	
 	@GetMapping("/viewUpdateForm")
-	public String viewUpdateForm(@RequestParam("activityId") int theId, Model theModel) 
+	public String viewUpdateForm(@RequestParam("activityID") int theId, Model theModel) 
 	{
-		ActivityDTO theActivity = activityService.findById(theId);
+		ActivityDTO theActivity = activityService.this(theId);
 		
 		//Pre-populate the form by setting the faculty as a model attribute
 			
 		theModel.addAttribute("activity", theActivity);
 
 		//Redirect us to the faculty form
-		return "activities/activity-form";
+		return "activity/activity-form";
 		
 	}
 	
