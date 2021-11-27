@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.uc.BoredNoMore.dao.IActivityDAO;
-import com.uc.BoredNoMore.dto.*;
+import com.uc.BoredNoMore.dto.ActivityDTO;
 
 @Controller
 @RequestMapping("/BoredActivity")
 public class MainController {
 	
 	private IActivityDAO activityService;
-	public MainController(IActivityDAO activityService) {
-		this.activityService = activityService;
+	public MainController(IActivityDAO theActivityService) {
+		activityService = theActivityService;
 	}
 
 	@PostConstruct
@@ -100,13 +100,22 @@ public class MainController {
 		
 		List<ActivityDTO> todo = activityService.getActivities();
 		todoListModel.addAttribute("todoList", todo);
-		return "todo";
+		
+		//updated return from "todo" to "todoList/todo"
+		return "todoList/todo";
 	}
 	
 	@GetMapping("/viewUpdateForm")
-	public String viewUpdateForm(@RequestParam("activityId") int theID, Model theModel) 
+	public String viewUpdateForm(@RequestParam("activityID") int theId, Model theModel) 
 	{
-		ActivityDTO theActivity = ActivityServiceImpl.this(theID);
+		ActivityDTO theActivity = activityService.this(theId);
+		
+		//Pre-populate the form by setting the faculty as a model attribute
+			
+		theModel.addAttribute("activity", theActivity);
+
+		//Redirect us to the faculty form
+		return "activity/activity-form";
 		
 	}
 	

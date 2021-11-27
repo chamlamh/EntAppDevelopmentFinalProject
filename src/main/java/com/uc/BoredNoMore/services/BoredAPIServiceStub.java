@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.soit.soitfaculty.entity.Faculty;
+// import com.soit.soitfaculty.entity.Faculty;
+// The above import was left in from the class project
 import com.uc.BoredNoMore.dao.IBoredAPIService;
 import com.uc.BoredNoMore.dto.ActivityDTO;
-/**
+/**	
  * I'm aware that this is more of a controller, however it makes more sense to be included in the microservice layer
  * @author Brad
  *
