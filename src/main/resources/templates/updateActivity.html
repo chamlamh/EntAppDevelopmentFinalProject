@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://ww.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bored No More</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<h4>Bored No More</h4>
+		
+		<a class="btn btn-dark" th:href="@{/todo}" role="button">Back</a>
+		<p class="h4 mb-4">Update Activity</p>
+		<form action="#" th:action="@{/save}" th:object="${myActivity}" method="POST">
+		<input type="hidden" th:field="*{activityID}" />
+		<input type="text" th:field="*{activity}" class="form-control mb-4 col-4" placeholder="Activity Name" />
+		<input type="text" th:field="*{type}" class="form-control mb-4 col-4" placeholder="Activity Type" />
+		<input type="number" th:field="*{participants}" class="form-control mb-4 col-4" placeholder="Participants" />
+		<input type="number" th:field="*{price}" class="form-control mb-4 col-4" placeholder="Price" />
+		<input type="number" th:field="*{accessibility}" class="form-control mb-4 col-4" placeholder="Accessibility" />
+	
+		
+		<button type="submit" class="btn btn-danger">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

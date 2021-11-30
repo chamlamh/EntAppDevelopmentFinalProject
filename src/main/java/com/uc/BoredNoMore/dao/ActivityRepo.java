@@ -8,6 +8,5 @@ import com.uc.BoredNoMore.dto.ActivityDTO;
 
 public interface ActivityRepo extends JpaRepository<ActivityDTO, Integer>{
 	
-	public List<ActivityDTO>findAllByOrderByLastNameAsc();
 
 }

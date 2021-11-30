@@ -17,7 +17,7 @@ import com.uc.BoredNoMore.dao.IActivityDAO;
 import com.uc.BoredNoMore.dto.*;
 
 @Controller
-@RequestMapping("/BoredActivity")
+@RequestMapping("")
 public class MainController {
 	
 	private IActivityDAO activityService;
@@ -103,11 +103,21 @@ public class MainController {
 		return "todo";
 	}
 	
-	@GetMapping("/viewUpdateForm")
+	@GetMapping("/updateActivity")
 	public String viewUpdateForm(@RequestParam("activityId") int theID, Model theModel) 
 	{
-		ActivityDTO theActivity = ActivityServiceImpl.this(theID);
+		ActivityDTO theActivity = activityService.getActivityByID(theID);
+		theModel.addAttribute("myActivity", theActivity);
+		return "/updateActivity";
 		
+	}
+	
+	@PostMapping("/save")
+	public String saveActivity(@ModelAttribute("myActivity") ActivityDTO activity, RedirectAttributes redirectAttributes) {
+		//TODO: Instantiate IActivityDAO and call ActivityDAO.addActivity(activity); to save to database
+		this.activityService.saveActivity(activity);
+		redirectAttributes.addFlashAttribute("message", "You successfully uploaded the activity" + activity.getActivity() + "!");
+		return "redirect:/activity";
 	}
 	
 }

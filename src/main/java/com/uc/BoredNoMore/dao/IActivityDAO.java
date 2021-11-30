@@ -30,6 +30,7 @@ public interface IActivityDAO {
 	 */
 	ArrayList<ActivityDTO> getActivities();
 	
+	ActivityDTO getActivityByID(int id);
 	
 }
 
