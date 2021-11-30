@@ -31,6 +31,8 @@
 			<td th:text=${todo.isFinished}></td>
 			<td><a th:href="@{/updateActivity(activityId=${todo.activityID})}"
 			class="btn btn-light btn-sm">Update</a>
+			<a th:href="@{/delete(activity=${todo.activityID})}"
+			 class="btn btn-danger btn-sm" onclick="if(!(confirm('Please confirm that you want to remove this activity')))return false;">Delete</a>
 			</td>
 		</tr>
 		

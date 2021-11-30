@@ -22,7 +22,7 @@ public interface IActivityDAO {
 	 * Delete activity from database
 	 * @return void
 	 */
-	void deleteActivity(ActivityDTO activity);
+	void deleteActivity(int id);
 	
 	/**
 	 * Get activity from database with list

@@ -117,7 +117,13 @@ public class MainController {
 		//TODO: Instantiate IActivityDAO and call ActivityDAO.addActivity(activity); to save to database
 		this.activityService.saveActivity(activity);
 		redirectAttributes.addFlashAttribute("message", "You successfully uploaded the activity" + activity.getActivity() + "!");
-		return "redirect:/activity";
+		return "redirect:/todo";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteFaculty(@RequestParam("activity")int id) {
+		activityService.deleteActivity(id);
+		return "redirect:/todo";
 	}
 	
 }

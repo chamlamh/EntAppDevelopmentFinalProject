@@ -27,8 +27,8 @@ public class ActivityServiceImpl implements IActivityDAO{
 	}
 
 	@Override
-	public void deleteActivity(ActivityDTO activity) {
-		// TODO Auto-generated method stub
+	public void deleteActivity(int id) {
+		this.activityRepo.deleteById(id);
 		
 	}
 
