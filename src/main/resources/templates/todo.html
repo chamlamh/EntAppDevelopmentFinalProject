@@ -8,7 +8,11 @@
 	</head>
 	<body>
 		<div th:replace="fragments/header :: header"></div>
+		<br/>
 		<h1>TODO list</h1>
+		<br/>
+		<button class="btn btn-primary" onclick="location.href='/bored/random'">Get Random Activity</button>
+		<button class="btn btn-success" onclick="location.href='/addactivity'">Add Custom Activity</button>
 		<table class="table table-responsive table-bordered" border="1">
 		<thead>
 			<tr class="bg-primary">

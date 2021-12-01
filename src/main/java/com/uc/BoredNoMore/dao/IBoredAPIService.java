@@ -1,5 +1,8 @@
 package com.uc.BoredNoMore.dao;
 
+import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.uc.BoredNoMore.dto.ActivityDTO;
 
 /**
@@ -13,6 +16,6 @@ public interface IBoredAPIService {
 	 * Fetch a random activity from the bored api
 	 * @return ActivityDTO with random activity
 	 */
-	ActivityDTO getRandomActivity();
+	ModelAndView getRandomActivity();
 	
 }
