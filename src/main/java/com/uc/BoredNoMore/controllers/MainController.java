@@ -103,6 +103,12 @@ public class MainController {
 		return "todo";
 	}
 	
+	/**
+	 * 
+	 * @param theID The ID of the activity that should be updated
+	 * @param theModel the model in which the view will use
+	 * @return the pointer to the updateActivity.html page
+	 */
 	@GetMapping("/updateActivity")
 	public String viewUpdateForm(@RequestParam("activityId") int theID, Model theModel) 
 	{
@@ -112,6 +118,12 @@ public class MainController {
 		
 	}
 	
+	/**
+	 * 
+	 * @param activity Activity that should be saved
+	 * @param redirectAttributes
+	 * @return returns users to the todo page upon saving
+	 */
 	@PostMapping("/save")
 	public String saveActivity(@ModelAttribute("myActivity") ActivityDTO activity, RedirectAttributes redirectAttributes) {
 		this.activityService.saveActivity(activity);
@@ -119,12 +131,22 @@ public class MainController {
 		return "redirect:/todo";
 	}
 	
+	/**
+	 * 
+	 * @param id id of the activity that is finished.
+	 * @return redirection back to the todo page
+	 */
 	@GetMapping("/finished")
 	public String markActivityFinished(@RequestParam("activity")int id) {
 		this.activityService.finishActivity(id);
 		return "redirect:/todo";
 	}
 	
+	/**
+	 * 
+	 * @param id activity to be deleted
+	 * @return redirection back to the todo page
+	 */
 	@GetMapping("/delete")
 	public String deleteFaculty(@RequestParam("activity")int id) {
 		activityService.deleteActivity(id);

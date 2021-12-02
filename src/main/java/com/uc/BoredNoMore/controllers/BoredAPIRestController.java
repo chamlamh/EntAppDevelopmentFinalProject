@@ -24,7 +24,7 @@ public class BoredAPIRestController implements IBoredAPIService{
 	private RestTemplate restTemplate;
 
 	/**
-	 * returns a random activity from the bored api
+	 * returns a random activity from the bored api and fills out an activity creation view
 	 */
 	@RequestMapping("/random")
 	@Override

@@ -30,8 +30,17 @@ public interface IActivityDAO {
 	 */
 	ArrayList<ActivityDTO> getActivities();
 	
+	/**
+	 * 
+	 * @param id id of the activity record
+	 * @return A single activity that has a given ID
+	 */
 	ActivityDTO getActivityByID(int id);
 
+	/**
+	 * Marks an activity as finished.
+	 * @param id of the activity to mark as finished
+	 */
 	void finishActivity(int id);
 	
 }
