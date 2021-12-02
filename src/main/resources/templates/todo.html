@@ -9,10 +9,12 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		<br/>
-		<h1>TODO list</h1>
+		<h1 class="text-center">TODO list</h1>
 		<br/>
+		<div class="text-center">
 		<button class="btn btn-primary" onclick="location.href='/bored/random'">Get Random Activity</button>
 		<button class="btn btn-success" onclick="location.href='/addactivity'">Add Custom Activity</button>
+		</div>
 		<table class="table table-responsive table-bordered" border="1">
 		<thead>
 			<tr class="bg-primary">
