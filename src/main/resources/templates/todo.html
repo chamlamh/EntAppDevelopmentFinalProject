@@ -32,7 +32,9 @@
 			<td th:text=${todo.participants}></td>
 			<td th:text=${todo.price}></td>
 			<td th:text=${todo.accessibility}></td>
-			<td th:text=${todo.isFinished}></td>
+			<td><a th:if="${!todo.isFinished}" class="btn btn-primary" th:href="@{/finished(activity=${todo.activityID})}">Mark Finished</a>
+			<label th:if="${todo.isFinished}">Finished!</label>
+			</td>
 			<td><a th:href="@{/updateActivity(activityId=${todo.activityID})}"
 			class="btn btn-light btn-sm">Update</a>
 			<a th:href="@{/delete(activity=${todo.activityID})}"

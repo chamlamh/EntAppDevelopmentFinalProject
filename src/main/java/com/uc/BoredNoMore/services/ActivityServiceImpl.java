@@ -50,4 +50,18 @@ public class ActivityServiceImpl implements IActivityDAO{
 		
 		return myActivity;
 	}
+
+	@Override
+	public void finishActivity(int id) {
+		Optional<ActivityDTO> activityid =  activityRepo.findById(id);
+		ActivityDTO myActivity = null;
+		if(activityid.isPresent()) {
+			myActivity = activityid.get();
+			myActivity.setIsFinsihed(true);
+			this.activityRepo.save(myActivity);
+		}
+		else {
+			throw new RuntimeException ("The activityID you've entered is invalid - " + id);
+		}
+	}
 }

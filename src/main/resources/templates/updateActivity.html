@@ -13,14 +13,38 @@
 		<h4>Bored No More</h4>
 		
 		<a class="btn btn-dark" th:href="@{/todo}" role="button">Back</a>
-		<p class="h4 mb-4">Update Activity</p>
-		<form action="#" th:action="@{/save}" th:object="${myActivity}" method="POST">
-		<input type="hidden" th:field="*{activityID}" />
-		<input type="text" th:field="*{activity}" class="form-control mb-4 col-4" placeholder="Activity Name" />
-		<input type="text" th:field="*{type}" class="form-control mb-4 col-4" placeholder="Activity Type" />
-		<input type="number" th:field="*{participants}" class="form-control mb-4 col-4" placeholder="Participants" />
-		<input type="number" th:field="*{price}" class="form-control mb-4 col-4" placeholder="Price" />
-		<input type="number" th:field="*{accessibility}" class="form-control mb-4 col-4" placeholder="Accessibility" />
+		<form th:action="@{/save}" th:object="${myActivity}" method="post">			
+				<div class=" form-group row">
+					<label class="col-sm-4 col-form-label" for="name">Activity Name:</label>
+					<div class=col-sm-4>
+						<input type="text" id="name" class="form-control" th:field="*{Activity}" placeholder="Activity Name..."/>	
+					</div>
+				</div>
+				<div class="form-group row">
+<!-- 					<p>Activity Type: <input type="text" th:field="*{type}" placeholder="Activity Type..."></p>			 -->
+					<label class="col-sm-4 col-form-label" for="type">Activity Type:</label>
+					<div class="col-sm-4">
+						<input type="text" id="type" class="form-control" th:field="*{Type}" placeholder="Activity Type..."/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="participants"><span title="How many people will be participating?">Activity Participants: </span></label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="participants" th:field="*{participants}" placeholder="Activity Participants...">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="price">Activity Price: $</label>
+					<div class="col-sm-4">
+						<input type="text" id="price" class="form-control" th:field="*{price}" placeholder="Activity Price...">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label" for="accessibility"><span title="How easy an activity is to complete">Activity Accessibility:</span> </label>
+					<div class="col-sm-4">
+						<input type="text" id="accessibility" class="form-control" th:field="*{accessibility}" placeholder="Activity Accessibility...">
+					</div>
+				</div>
 	
 		
 		<button type="submit" class="btn btn-danger">Submit</button>

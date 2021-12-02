@@ -114,9 +114,14 @@ public class MainController {
 	
 	@PostMapping("/save")
 	public String saveActivity(@ModelAttribute("myActivity") ActivityDTO activity, RedirectAttributes redirectAttributes) {
-		//TODO: Instantiate IActivityDAO and call ActivityDAO.addActivity(activity); to save to database
 		this.activityService.saveActivity(activity);
 		redirectAttributes.addFlashAttribute("message", "You successfully uploaded the activity" + activity.getActivity() + "!");
+		return "redirect:/todo";
+	}
+	
+	@GetMapping("/finished")
+	public String markActivityFinished(@RequestParam("activity")int id) {
+		this.activityService.finishActivity(id);
 		return "redirect:/todo";
 	}
 	
